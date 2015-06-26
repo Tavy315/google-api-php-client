@@ -33,14 +33,13 @@ class Google_Service_Container extends Google_Service
 {
   /** View and manage your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
+      'https://www.googleapis.com/auth/cloud-platform';
 
-  public $projects_clusters;
-  public $projects_operations;
-  public $projects_zones_clusters;
-  public $projects_zones_operations;
-  public $projects_zones_tokens;
-  
+    public $projects_clusters;
+    public $projects_operations;
+    public $projects_zones_clusters;
+    public $projects_zones_operations;
+    public $projects_zones_tokens;
 
   /**
    * Constructs the internal representation of the Container service.
@@ -49,214 +48,213 @@ class Google_Service_Container extends Google_Service
    */
   public function __construct(Google_Client $client)
   {
-    parent::__construct($client);
-    $this->servicePath = 'container/v1beta1/projects/';
-    $this->version = 'v1beta1';
-    $this->serviceName = 'container';
+      parent::__construct($client);
+      $this->servicePath = 'container/v1beta1/projects/';
+      $this->version = 'v1beta1';
+      $this->serviceName = 'container';
 
-    $this->projects_clusters = new Google_Service_Container_ProjectsClusters_Resource(
+      $this->projects_clusters = new Google_Service_Container_ProjectsClusters_Resource(
         $this,
         $this->serviceName,
         'clusters',
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{projectId}/clusters',
+              'path'       => '{projectId}/clusters',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_operations = new Google_Service_Container_ProjectsOperations_Resource(
+      $this->projects_operations = new Google_Service_Container_ProjectsOperations_Resource(
         $this,
         $this->serviceName,
         'operations',
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{projectId}/operations',
+              'path'       => '{projectId}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_zones_clusters = new Google_Service_Container_ProjectsZonesClusters_Resource(
+      $this->projects_zones_clusters = new Google_Service_Container_ProjectsZonesClusters_Resource(
         $this,
         $this->serviceName,
         'clusters',
         array(
           'methods' => array(
             'create' => array(
-              'path' => '{projectId}/zones/{zoneId}/clusters',
+              'path'       => '{projectId}/zones/{zoneId}/clusters',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'delete' => array(
-              'path' => '{projectId}/zones/{zoneId}/clusters/{clusterId}',
+            ), 'delete' => array(
+              'path'       => '{projectId}/zones/{zoneId}/clusters/{clusterId}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'clusterId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'get' => array(
-              'path' => '{projectId}/zones/{zoneId}/clusters/{clusterId}',
+            ), 'get' => array(
+              'path'       => '{projectId}/zones/{zoneId}/clusters/{clusterId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'clusterId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
-              'path' => '{projectId}/zones/{zoneId}/clusters',
+            ), 'list' => array(
+              'path'       => '{projectId}/zones/{zoneId}/clusters',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_zones_operations = new Google_Service_Container_ProjectsZonesOperations_Resource(
+      $this->projects_zones_operations = new Google_Service_Container_ProjectsZonesOperations_Resource(
         $this,
         $this->serviceName,
         'operations',
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{projectId}/zones/{zoneId}/operations/{operationId}',
+              'path'       => '{projectId}/zones/{zoneId}/operations/{operationId}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'operationId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
-              'path' => '{projectId}/zones/{zoneId}/operations',
+            ), 'list' => array(
+              'path'       => '{projectId}/zones/{zoneId}/operations',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'projectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_zones_tokens = new Google_Service_Container_ProjectsZonesTokens_Resource(
+      $this->projects_zones_tokens = new Google_Service_Container_ProjectsZonesTokens_Resource(
         $this,
         $this->serviceName,
         'tokens',
         array(
           'methods' => array(
             'get' => array(
-              'path' => '{masterProjectId}/zones/{zoneId}/tokens/{projectNumber}/{clusterName}',
+              'path'       => '{masterProjectId}/zones/{zoneId}/tokens/{projectNumber}/{clusterName}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'masterProjectId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'zoneId' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'projectNumber' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'clusterName' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
   }
 }
-
 
 /**
  * The "projects" collection of methods.
@@ -280,7 +278,6 @@ class Google_Service_Container_Projects_Resource extends Google_Service_Resource
  */
 class Google_Service_Container_ProjectsClusters_Resource extends Google_Service_Resource
 {
-
   /**
    * Lists all clusters owned by a project across all zones.
    * (clusters.listProjectsClusters)
@@ -292,9 +289,10 @@ class Google_Service_Container_ProjectsClusters_Resource extends Google_Service_
    */
   public function listProjectsClusters($projectId, $optParams = array())
   {
-    $params = array('projectId' => $projectId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Container_ListAggregatedClustersResponse");
+      $params = array('projectId' => $projectId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Container_ListAggregatedClustersResponse');
   }
 }
 /**
@@ -307,7 +305,6 @@ class Google_Service_Container_ProjectsClusters_Resource extends Google_Service_
  */
 class Google_Service_Container_ProjectsOperations_Resource extends Google_Service_Resource
 {
-
   /**
    * Lists all operations in a project, across all zones.
    * (operations.listProjectsOperations)
@@ -319,9 +316,10 @@ class Google_Service_Container_ProjectsOperations_Resource extends Google_Servic
    */
   public function listProjectsOperations($projectId, $optParams = array())
   {
-    $params = array('projectId' => $projectId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Container_ListAggregatedOperationsResponse");
+      $params = array('projectId' => $projectId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Container_ListAggregatedOperationsResponse');
   }
 }
 /**
@@ -346,7 +344,6 @@ class Google_Service_Container_ProjectsZones_Resource extends Google_Service_Res
  */
 class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Service_Resource
 {
-
   /**
    * Creates a cluster, consisting of the specified number and type of Google
    * Compute Engine instances, plus a Kubernetes master instance.
@@ -371,9 +368,10 @@ class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Ser
    */
   public function create($projectId, $zoneId, Google_Service_Container_CreateClusterRequest $postBody, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Container_Operation");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('create', array($params), 'Google_Service_Container_Operation');
   }
 
   /**
@@ -392,9 +390,10 @@ class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Ser
    */
   public function delete($projectId, $zoneId, $clusterId, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'clusterId' => $clusterId);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params), "Google_Service_Container_Operation");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'clusterId' => $clusterId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('delete', array($params), 'Google_Service_Container_Operation');
   }
 
   /**
@@ -410,9 +409,10 @@ class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Ser
    */
   public function get($projectId, $zoneId, $clusterId, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'clusterId' => $clusterId);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Container_Cluster");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'clusterId' => $clusterId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('get', array($params), 'Google_Service_Container_Cluster');
   }
 
   /**
@@ -428,9 +428,10 @@ class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Ser
    */
   public function listProjectsZonesClusters($projectId, $zoneId, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Container_ListClustersResponse");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Container_ListClustersResponse');
   }
 }
 /**
@@ -443,7 +444,6 @@ class Google_Service_Container_ProjectsZonesClusters_Resource extends Google_Ser
  */
 class Google_Service_Container_ProjectsZonesOperations_Resource extends Google_Service_Resource
 {
-
   /**
    * Gets the specified operation. (operations.get)
    *
@@ -458,9 +458,10 @@ class Google_Service_Container_ProjectsZonesOperations_Resource extends Google_S
    */
   public function get($projectId, $zoneId, $operationId, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'operationId' => $operationId);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Container_Operation");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId, 'operationId' => $operationId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('get', array($params), 'Google_Service_Container_Operation');
   }
 
   /**
@@ -476,9 +477,10 @@ class Google_Service_Container_ProjectsZonesOperations_Resource extends Google_S
    */
   public function listProjectsZonesOperations($projectId, $zoneId, $optParams = array())
   {
-    $params = array('projectId' => $projectId, 'zoneId' => $zoneId);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Container_ListOperationsResponse");
+      $params = array('projectId' => $projectId, 'zoneId' => $zoneId);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Container_ListOperationsResponse');
   }
 }
 /**
@@ -491,7 +493,6 @@ class Google_Service_Container_ProjectsZonesOperations_Resource extends Google_S
  */
 class Google_Service_Container_ProjectsZonesTokens_Resource extends Google_Service_Resource
 {
-
   /**
    * Gets a compute-rw scoped OAuth2 access token for . Authentication is
    * performed to ensure that the caller is a member of  and that the request is
@@ -509,473 +510,460 @@ class Google_Service_Container_ProjectsZonesTokens_Resource extends Google_Servi
    */
   public function get($masterProjectId, $zoneId, $projectNumber, $clusterName, $optParams = array())
   {
-    $params = array('masterProjectId' => $masterProjectId, 'zoneId' => $zoneId, 'projectNumber' => $projectNumber, 'clusterName' => $clusterName);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Container_Token");
+      $params = array('masterProjectId' => $masterProjectId, 'zoneId' => $zoneId, 'projectNumber' => $projectNumber, 'clusterName' => $clusterName);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('get', array($params), 'Google_Service_Container_Token');
   }
 }
-
-
-
 
 class Google_Service_Container_Cluster extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $clusterApiVersion;
-  public $containerIpv4Cidr;
-  public $creationTimestamp;
-  public $description;
-  public $enableCloudLogging;
-  public $endpoint;
-  protected $masterAuthType = 'Google_Service_Container_MasterAuth';
-  protected $masterAuthDataType = '';
-  public $name;
-  public $network;
-  protected $nodeConfigType = 'Google_Service_Container_NodeConfig';
-  protected $nodeConfigDataType = '';
-  public $nodeRoutingPrefixSize;
-  public $numNodes;
-  public $selfLink;
-  public $servicesIpv4Cidr;
-  public $status;
-  public $statusMessage;
-  public $zone;
+    public $clusterApiVersion;
+    public $containerIpv4Cidr;
+    public $creationTimestamp;
+    public $description;
+    public $enableCloudLogging;
+    public $endpoint;
+    protected $masterAuthType = 'Google_Service_Container_MasterAuth';
+    protected $masterAuthDataType = '';
+    public $name;
+    public $network;
+    protected $nodeConfigType = 'Google_Service_Container_NodeConfig';
+    protected $nodeConfigDataType = '';
+    public $nodeRoutingPrefixSize;
+    public $numNodes;
+    public $selfLink;
+    public $servicesIpv4Cidr;
+    public $status;
+    public $statusMessage;
+    public $zone;
 
-
-  public function setClusterApiVersion($clusterApiVersion)
-  {
-    $this->clusterApiVersion = $clusterApiVersion;
-  }
-  public function getClusterApiVersion()
-  {
-    return $this->clusterApiVersion;
-  }
-  public function setContainerIpv4Cidr($containerIpv4Cidr)
-  {
-    $this->containerIpv4Cidr = $containerIpv4Cidr;
-  }
-  public function getContainerIpv4Cidr()
-  {
-    return $this->containerIpv4Cidr;
-  }
-  public function setCreationTimestamp($creationTimestamp)
-  {
-    $this->creationTimestamp = $creationTimestamp;
-  }
-  public function getCreationTimestamp()
-  {
-    return $this->creationTimestamp;
-  }
-  public function setDescription($description)
-  {
-    $this->description = $description;
-  }
-  public function getDescription()
-  {
-    return $this->description;
-  }
-  public function setEnableCloudLogging($enableCloudLogging)
-  {
-    $this->enableCloudLogging = $enableCloudLogging;
-  }
-  public function getEnableCloudLogging()
-  {
-    return $this->enableCloudLogging;
-  }
-  public function setEndpoint($endpoint)
-  {
-    $this->endpoint = $endpoint;
-  }
-  public function getEndpoint()
-  {
-    return $this->endpoint;
-  }
-  public function setMasterAuth(Google_Service_Container_MasterAuth $masterAuth)
-  {
-    $this->masterAuth = $masterAuth;
-  }
-  public function getMasterAuth()
-  {
-    return $this->masterAuth;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setNetwork($network)
-  {
-    $this->network = $network;
-  }
-  public function getNetwork()
-  {
-    return $this->network;
-  }
-  public function setNodeConfig(Google_Service_Container_NodeConfig $nodeConfig)
-  {
-    $this->nodeConfig = $nodeConfig;
-  }
-  public function getNodeConfig()
-  {
-    return $this->nodeConfig;
-  }
-  public function setNodeRoutingPrefixSize($nodeRoutingPrefixSize)
-  {
-    $this->nodeRoutingPrefixSize = $nodeRoutingPrefixSize;
-  }
-  public function getNodeRoutingPrefixSize()
-  {
-    return $this->nodeRoutingPrefixSize;
-  }
-  public function setNumNodes($numNodes)
-  {
-    $this->numNodes = $numNodes;
-  }
-  public function getNumNodes()
-  {
-    return $this->numNodes;
-  }
-  public function setSelfLink($selfLink)
-  {
-    $this->selfLink = $selfLink;
-  }
-  public function getSelfLink()
-  {
-    return $this->selfLink;
-  }
-  public function setServicesIpv4Cidr($servicesIpv4Cidr)
-  {
-    $this->servicesIpv4Cidr = $servicesIpv4Cidr;
-  }
-  public function getServicesIpv4Cidr()
-  {
-    return $this->servicesIpv4Cidr;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setStatusMessage($statusMessage)
-  {
-    $this->statusMessage = $statusMessage;
-  }
-  public function getStatusMessage()
-  {
-    return $this->statusMessage;
-  }
-  public function setZone($zone)
-  {
-    $this->zone = $zone;
-  }
-  public function getZone()
-  {
-    return $this->zone;
-  }
+    public function setClusterApiVersion($clusterApiVersion)
+    {
+        $this->clusterApiVersion = $clusterApiVersion;
+    }
+    public function getClusterApiVersion()
+    {
+        return $this->clusterApiVersion;
+    }
+    public function setContainerIpv4Cidr($containerIpv4Cidr)
+    {
+        $this->containerIpv4Cidr = $containerIpv4Cidr;
+    }
+    public function getContainerIpv4Cidr()
+    {
+        return $this->containerIpv4Cidr;
+    }
+    public function setCreationTimestamp($creationTimestamp)
+    {
+        $this->creationTimestamp = $creationTimestamp;
+    }
+    public function getCreationTimestamp()
+    {
+        return $this->creationTimestamp;
+    }
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+    public function getDescription()
+    {
+        return $this->description;
+    }
+    public function setEnableCloudLogging($enableCloudLogging)
+    {
+        $this->enableCloudLogging = $enableCloudLogging;
+    }
+    public function getEnableCloudLogging()
+    {
+        return $this->enableCloudLogging;
+    }
+    public function setEndpoint($endpoint)
+    {
+        $this->endpoint = $endpoint;
+    }
+    public function getEndpoint()
+    {
+        return $this->endpoint;
+    }
+    public function setMasterAuth(Google_Service_Container_MasterAuth $masterAuth)
+    {
+        $this->masterAuth = $masterAuth;
+    }
+    public function getMasterAuth()
+    {
+        return $this->masterAuth;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setNetwork($network)
+    {
+        $this->network = $network;
+    }
+    public function getNetwork()
+    {
+        return $this->network;
+    }
+    public function setNodeConfig(Google_Service_Container_NodeConfig $nodeConfig)
+    {
+        $this->nodeConfig = $nodeConfig;
+    }
+    public function getNodeConfig()
+    {
+        return $this->nodeConfig;
+    }
+    public function setNodeRoutingPrefixSize($nodeRoutingPrefixSize)
+    {
+        $this->nodeRoutingPrefixSize = $nodeRoutingPrefixSize;
+    }
+    public function getNodeRoutingPrefixSize()
+    {
+        return $this->nodeRoutingPrefixSize;
+    }
+    public function setNumNodes($numNodes)
+    {
+        $this->numNodes = $numNodes;
+    }
+    public function getNumNodes()
+    {
+        return $this->numNodes;
+    }
+    public function setSelfLink($selfLink)
+    {
+        $this->selfLink = $selfLink;
+    }
+    public function getSelfLink()
+    {
+        return $this->selfLink;
+    }
+    public function setServicesIpv4Cidr($servicesIpv4Cidr)
+    {
+        $this->servicesIpv4Cidr = $servicesIpv4Cidr;
+    }
+    public function getServicesIpv4Cidr()
+    {
+        return $this->servicesIpv4Cidr;
+    }
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    public function setStatusMessage($statusMessage)
+    {
+        $this->statusMessage = $statusMessage;
+    }
+    public function getStatusMessage()
+    {
+        return $this->statusMessage;
+    }
+    public function setZone($zone)
+    {
+        $this->zone = $zone;
+    }
+    public function getZone()
+    {
+        return $this->zone;
+    }
 }
 
 class Google_Service_Container_CreateClusterRequest extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  protected $clusterType = 'Google_Service_Container_Cluster';
-  protected $clusterDataType = '';
+    protected $clusterType = 'Google_Service_Container_Cluster';
+    protected $clusterDataType = '';
 
-
-  public function setCluster(Google_Service_Container_Cluster $cluster)
-  {
-    $this->cluster = $cluster;
-  }
-  public function getCluster()
-  {
-    return $this->cluster;
-  }
+    public function setCluster(Google_Service_Container_Cluster $cluster)
+    {
+        $this->cluster = $cluster;
+    }
+    public function getCluster()
+    {
+        return $this->cluster;
+    }
 }
 
 class Google_Service_Container_ListAggregatedClustersResponse extends Google_Collection
 {
   protected $collection_key = 'clusters';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $clustersType = 'Google_Service_Container_Cluster';
-  protected $clustersDataType = 'array';
+    protected $clustersType = 'Google_Service_Container_Cluster';
+    protected $clustersDataType = 'array';
 
-
-  public function setClusters($clusters)
-  {
-    $this->clusters = $clusters;
-  }
-  public function getClusters()
-  {
-    return $this->clusters;
-  }
+    public function setClusters($clusters)
+    {
+        $this->clusters = $clusters;
+    }
+    public function getClusters()
+    {
+        return $this->clusters;
+    }
 }
 
 class Google_Service_Container_ListAggregatedOperationsResponse extends Google_Collection
 {
   protected $collection_key = 'operations';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $operationsType = 'Google_Service_Container_Operation';
-  protected $operationsDataType = 'array';
+    protected $operationsType = 'Google_Service_Container_Operation';
+    protected $operationsDataType = 'array';
 
-
-  public function setOperations($operations)
-  {
-    $this->operations = $operations;
-  }
-  public function getOperations()
-  {
-    return $this->operations;
-  }
+    public function setOperations($operations)
+    {
+        $this->operations = $operations;
+    }
+    public function getOperations()
+    {
+        return $this->operations;
+    }
 }
 
 class Google_Service_Container_ListClustersResponse extends Google_Collection
 {
   protected $collection_key = 'clusters';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $clustersType = 'Google_Service_Container_Cluster';
-  protected $clustersDataType = 'array';
+    protected $clustersType = 'Google_Service_Container_Cluster';
+    protected $clustersDataType = 'array';
 
-
-  public function setClusters($clusters)
-  {
-    $this->clusters = $clusters;
-  }
-  public function getClusters()
-  {
-    return $this->clusters;
-  }
+    public function setClusters($clusters)
+    {
+        $this->clusters = $clusters;
+    }
+    public function getClusters()
+    {
+        return $this->clusters;
+    }
 }
 
 class Google_Service_Container_ListOperationsResponse extends Google_Collection
 {
   protected $collection_key = 'operations';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $operationsType = 'Google_Service_Container_Operation';
-  protected $operationsDataType = 'array';
+    protected $operationsType = 'Google_Service_Container_Operation';
+    protected $operationsDataType = 'array';
 
-
-  public function setOperations($operations)
-  {
-    $this->operations = $operations;
-  }
-  public function getOperations()
-  {
-    return $this->operations;
-  }
+    public function setOperations($operations)
+    {
+        $this->operations = $operations;
+    }
+    public function getOperations()
+    {
+        return $this->operations;
+    }
 }
 
 class Google_Service_Container_MasterAuth extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $bearerToken;
-  public $password;
-  public $user;
+    public $bearerToken;
+    public $password;
+    public $user;
 
-
-  public function setBearerToken($bearerToken)
-  {
-    $this->bearerToken = $bearerToken;
-  }
-  public function getBearerToken()
-  {
-    return $this->bearerToken;
-  }
-  public function setPassword($password)
-  {
-    $this->password = $password;
-  }
-  public function getPassword()
-  {
-    return $this->password;
-  }
-  public function setUser($user)
-  {
-    $this->user = $user;
-  }
-  public function getUser()
-  {
-    return $this->user;
-  }
+    public function setBearerToken($bearerToken)
+    {
+        $this->bearerToken = $bearerToken;
+    }
+    public function getBearerToken()
+    {
+        return $this->bearerToken;
+    }
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+    public function getPassword()
+    {
+        return $this->password;
+    }
+    public function setUser($user)
+    {
+        $this->user = $user;
+    }
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
 
 class Google_Service_Container_NodeConfig extends Google_Collection
 {
   protected $collection_key = 'serviceAccounts';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $machineType;
-  protected $serviceAccountsType = 'Google_Service_Container_ServiceAccount';
-  protected $serviceAccountsDataType = 'array';
-  public $sourceImage;
+    public $machineType;
+    protected $serviceAccountsType = 'Google_Service_Container_ServiceAccount';
+    protected $serviceAccountsDataType = 'array';
+    public $sourceImage;
 
-
-  public function setMachineType($machineType)
-  {
-    $this->machineType = $machineType;
-  }
-  public function getMachineType()
-  {
-    return $this->machineType;
-  }
-  public function setServiceAccounts($serviceAccounts)
-  {
-    $this->serviceAccounts = $serviceAccounts;
-  }
-  public function getServiceAccounts()
-  {
-    return $this->serviceAccounts;
-  }
-  public function setSourceImage($sourceImage)
-  {
-    $this->sourceImage = $sourceImage;
-  }
-  public function getSourceImage()
-  {
-    return $this->sourceImage;
-  }
+    public function setMachineType($machineType)
+    {
+        $this->machineType = $machineType;
+    }
+    public function getMachineType()
+    {
+        return $this->machineType;
+    }
+    public function setServiceAccounts($serviceAccounts)
+    {
+        $this->serviceAccounts = $serviceAccounts;
+    }
+    public function getServiceAccounts()
+    {
+        return $this->serviceAccounts;
+    }
+    public function setSourceImage($sourceImage)
+    {
+        $this->sourceImage = $sourceImage;
+    }
+    public function getSourceImage()
+    {
+        return $this->sourceImage;
+    }
 }
 
 class Google_Service_Container_Operation extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $errorMessage;
-  public $name;
-  public $operationType;
-  public $selfLink;
-  public $status;
-  public $target;
-  public $targetLink;
-  public $zone;
+    public $errorMessage;
+    public $name;
+    public $operationType;
+    public $selfLink;
+    public $status;
+    public $target;
+    public $targetLink;
+    public $zone;
 
-
-  public function setErrorMessage($errorMessage)
-  {
-    $this->errorMessage = $errorMessage;
-  }
-  public function getErrorMessage()
-  {
-    return $this->errorMessage;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setOperationType($operationType)
-  {
-    $this->operationType = $operationType;
-  }
-  public function getOperationType()
-  {
-    return $this->operationType;
-  }
-  public function setSelfLink($selfLink)
-  {
-    $this->selfLink = $selfLink;
-  }
-  public function getSelfLink()
-  {
-    return $this->selfLink;
-  }
-  public function setStatus($status)
-  {
-    $this->status = $status;
-  }
-  public function getStatus()
-  {
-    return $this->status;
-  }
-  public function setTarget($target)
-  {
-    $this->target = $target;
-  }
-  public function getTarget()
-  {
-    return $this->target;
-  }
-  public function setTargetLink($targetLink)
-  {
-    $this->targetLink = $targetLink;
-  }
-  public function getTargetLink()
-  {
-    return $this->targetLink;
-  }
-  public function setZone($zone)
-  {
-    $this->zone = $zone;
-  }
-  public function getZone()
-  {
-    return $this->zone;
-  }
+    public function setErrorMessage($errorMessage)
+    {
+        $this->errorMessage = $errorMessage;
+    }
+    public function getErrorMessage()
+    {
+        return $this->errorMessage;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setOperationType($operationType)
+    {
+        $this->operationType = $operationType;
+    }
+    public function getOperationType()
+    {
+        return $this->operationType;
+    }
+    public function setSelfLink($selfLink)
+    {
+        $this->selfLink = $selfLink;
+    }
+    public function getSelfLink()
+    {
+        return $this->selfLink;
+    }
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    public function setTarget($target)
+    {
+        $this->target = $target;
+    }
+    public function getTarget()
+    {
+        return $this->target;
+    }
+    public function setTargetLink($targetLink)
+    {
+        $this->targetLink = $targetLink;
+    }
+    public function getTargetLink()
+    {
+        return $this->targetLink;
+    }
+    public function setZone($zone)
+    {
+        $this->zone = $zone;
+    }
+    public function getZone()
+    {
+        return $this->zone;
+    }
 }
 
 class Google_Service_Container_ServiceAccount extends Google_Collection
 {
   protected $collection_key = 'scopes';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $email;
-  public $scopes;
+    public $email;
+    public $scopes;
 
-
-  public function setEmail($email)
-  {
-    $this->email = $email;
-  }
-  public function getEmail()
-  {
-    return $this->email;
-  }
-  public function setScopes($scopes)
-  {
-    $this->scopes = $scopes;
-  }
-  public function getScopes()
-  {
-    return $this->scopes;
-  }
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    public function setScopes($scopes)
+    {
+        $this->scopes = $scopes;
+    }
+    public function getScopes()
+    {
+        return $this->scopes;
+    }
 }
 
 class Google_Service_Container_Token extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $accessToken;
-  public $expiryTimeSeconds;
+    public $accessToken;
+    public $expiryTimeSeconds;
 
-
-  public function setAccessToken($accessToken)
-  {
-    $this->accessToken = $accessToken;
-  }
-  public function getAccessToken()
-  {
-    return $this->accessToken;
-  }
-  public function setExpiryTimeSeconds($expiryTimeSeconds)
-  {
-    $this->expiryTimeSeconds = $expiryTimeSeconds;
-  }
-  public function getExpiryTimeSeconds()
-  {
-    return $this->expiryTimeSeconds;
-  }
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+    }
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+    public function setExpiryTimeSeconds($expiryTimeSeconds)
+    {
+        $this->expiryTimeSeconds = $expiryTimeSeconds;
+    }
+    public function getExpiryTimeSeconds()
+    {
+        return $this->expiryTimeSeconds;
+    }
 }

@@ -32,15 +32,14 @@ class Google_Service_Pubsub extends Google_Service
 {
   /** View and manage your data across Google Cloud Platform services. */
   const CLOUD_PLATFORM =
-      "https://www.googleapis.com/auth/cloud-platform";
+      'https://www.googleapis.com/auth/cloud-platform';
   /** View and manage Pub/Sub topics and subscriptions. */
   const PUBSUB =
-      "https://www.googleapis.com/auth/pubsub";
+      'https://www.googleapis.com/auth/pubsub';
 
-  public $projects_subscriptions;
-  public $projects_topics;
-  public $projects_topics_subscriptions;
-  
+    public $projects_subscriptions;
+    public $projects_topics;
+    public $projects_topics_subscriptions;
 
   /**
    * Constructs the internal representation of the Pubsub service.
@@ -49,208 +48,207 @@ class Google_Service_Pubsub extends Google_Service
    */
   public function __construct(Google_Client $client)
   {
-    parent::__construct($client);
-    $this->servicePath = 'v1beta2/';
-    $this->version = 'v1beta2';
-    $this->serviceName = 'pubsub';
+      parent::__construct($client);
+      $this->servicePath = 'v1beta2/';
+      $this->version = 'v1beta2';
+      $this->serviceName = 'pubsub';
 
-    $this->projects_subscriptions = new Google_Service_Pubsub_ProjectsSubscriptions_Resource(
+      $this->projects_subscriptions = new Google_Service_Pubsub_ProjectsSubscriptions_Resource(
         $this,
         $this->serviceName,
         'subscriptions',
         array(
           'methods' => array(
             'acknowledge' => array(
-              'path' => '{+subscription}:acknowledge',
+              'path'       => '{+subscription}:acknowledge',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'create' => array(
-              'path' => '{+name}',
+            ), 'create' => array(
+              'path'       => '{+name}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'name' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'delete' => array(
-              'path' => '{+subscription}',
+            ), 'delete' => array(
+              'path'       => '{+subscription}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'get' => array(
-              'path' => '{+subscription}',
+            ), 'get' => array(
+              'path'       => '{+subscription}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
-              'path' => '{+project}/subscriptions',
+            ), 'list' => array(
+              'path'       => '{+project}/subscriptions',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type'     => 'string',
                 ),
                 'pageSize' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type'     => 'integer',
                 ),
               ),
-            ),'modifyAckDeadline' => array(
-              'path' => '{+subscription}:modifyAckDeadline',
+            ), 'modifyAckDeadline' => array(
+              'path'       => '{+subscription}:modifyAckDeadline',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'modifyPushConfig' => array(
-              'path' => '{+subscription}:modifyPushConfig',
+            ), 'modifyPushConfig' => array(
+              'path'       => '{+subscription}:modifyPushConfig',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'pull' => array(
-              'path' => '{+subscription}:pull',
+            ), 'pull' => array(
+              'path'       => '{+subscription}:pull',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'subscription' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_topics = new Google_Service_Pubsub_ProjectsTopics_Resource(
+      $this->projects_topics = new Google_Service_Pubsub_ProjectsTopics_Resource(
         $this,
         $this->serviceName,
         'topics',
         array(
           'methods' => array(
             'create' => array(
-              'path' => '{+name}',
+              'path'       => '{+name}',
               'httpMethod' => 'PUT',
               'parameters' => array(
                 'name' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'delete' => array(
-              'path' => '{+topic}',
+            ), 'delete' => array(
+              'path'       => '{+topic}',
               'httpMethod' => 'DELETE',
               'parameters' => array(
                 'topic' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'get' => array(
-              'path' => '{+topic}',
+            ), 'get' => array(
+              'path'       => '{+topic}',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'topic' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
-            ),'list' => array(
-              'path' => '{+project}/topics',
+            ), 'list' => array(
+              'path'       => '{+project}/topics',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'project' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type'     => 'string',
                 ),
                 'pageSize' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type'     => 'integer',
                 ),
               ),
-            ),'publish' => array(
-              'path' => '{+topic}:publish',
+            ), 'publish' => array(
+              'path'       => '{+topic}:publish',
               'httpMethod' => 'POST',
               'parameters' => array(
                 'topic' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
               ),
             ),
-          )
+          ),
         )
     );
-    $this->projects_topics_subscriptions = new Google_Service_Pubsub_ProjectsTopicsSubscriptions_Resource(
+      $this->projects_topics_subscriptions = new Google_Service_Pubsub_ProjectsTopicsSubscriptions_Resource(
         $this,
         $this->serviceName,
         'subscriptions',
         array(
           'methods' => array(
             'list' => array(
-              'path' => '{+topic}/subscriptions',
+              'path'       => '{+topic}/subscriptions',
               'httpMethod' => 'GET',
               'parameters' => array(
                 'topic' => array(
                   'location' => 'path',
-                  'type' => 'string',
+                  'type'     => 'string',
                   'required' => true,
                 ),
                 'pageToken' => array(
                   'location' => 'query',
-                  'type' => 'string',
+                  'type'     => 'string',
                 ),
                 'pageSize' => array(
                   'location' => 'query',
-                  'type' => 'integer',
+                  'type'     => 'integer',
                 ),
               ),
             ),
-          )
+          ),
         )
     );
   }
 }
-
 
 /**
  * The "projects" collection of methods.
@@ -274,7 +272,6 @@ class Google_Service_Pubsub_Projects_Resource extends Google_Service_Resource
  */
 class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Service_Resource
 {
-
   /**
    * Acknowledges the messages associated with the ack tokens in the
    * AcknowledgeRequest. The Pub/Sub system can remove the relevant messages from
@@ -289,9 +286,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function acknowledge($subscription, Google_Service_Pubsub_AcknowledgeRequest $postBody, $optParams = array())
   {
-    $params = array('subscription' => $subscription, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('acknowledge', array($params), "Google_Service_Pubsub_Empty");
+      $params = array('subscription' => $subscription, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('acknowledge', array($params), 'Google_Service_Pubsub_Empty');
   }
 
   /**
@@ -308,9 +306,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function create($name, Google_Service_Pubsub_Subscription $postBody, $optParams = array())
   {
-    $params = array('name' => $name, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Pubsub_Subscription");
+      $params = array('name' => $name, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('create', array($params), 'Google_Service_Pubsub_Subscription');
   }
 
   /**
@@ -326,9 +325,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function delete($subscription, $optParams = array())
   {
-    $params = array('subscription' => $subscription);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params), "Google_Service_Pubsub_Empty");
+      $params = array('subscription' => $subscription);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('delete', array($params), 'Google_Service_Pubsub_Empty');
   }
 
   /**
@@ -340,9 +340,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function get($subscription, $optParams = array())
   {
-    $params = array('subscription' => $subscription);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Pubsub_Subscription");
+      $params = array('subscription' => $subscription);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('get', array($params), 'Google_Service_Pubsub_Subscription');
   }
 
   /**
@@ -357,9 +358,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function listProjectsSubscriptions($project, $optParams = array())
   {
-    $params = array('project' => $project);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Pubsub_ListSubscriptionsResponse");
+      $params = array('project' => $project);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Pubsub_ListSubscriptionsResponse');
   }
 
   /**
@@ -375,9 +377,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function modifyAckDeadline($subscription, Google_Service_Pubsub_ModifyAckDeadlineRequest $postBody, $optParams = array())
   {
-    $params = array('subscription' => $subscription, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('modifyAckDeadline', array($params), "Google_Service_Pubsub_Empty");
+      $params = array('subscription' => $subscription, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('modifyAckDeadline', array($params), 'Google_Service_Pubsub_Empty');
   }
 
   /**
@@ -395,9 +398,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function modifyPushConfig($subscription, Google_Service_Pubsub_ModifyPushConfigRequest $postBody, $optParams = array())
   {
-    $params = array('subscription' => $subscription, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('modifyPushConfig', array($params), "Google_Service_Pubsub_Empty");
+      $params = array('subscription' => $subscription, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('modifyPushConfig', array($params), 'Google_Service_Pubsub_Empty');
   }
 
   /**
@@ -413,9 +417,10 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
    */
   public function pull($subscription, Google_Service_Pubsub_PullRequest $postBody, $optParams = array())
   {
-    $params = array('subscription' => $subscription, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('pull', array($params), "Google_Service_Pubsub_PullResponse");
+      $params = array('subscription' => $subscription, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('pull', array($params), 'Google_Service_Pubsub_PullResponse');
   }
 }
 /**
@@ -428,7 +433,6 @@ class Google_Service_Pubsub_ProjectsSubscriptions_Resource extends Google_Servic
  */
 class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resource
 {
-
   /**
    * Creates the given topic with the given name. (topics.create)
    *
@@ -439,9 +443,10 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
    */
   public function create($name, Google_Service_Pubsub_Topic $postBody, $optParams = array())
   {
-    $params = array('name' => $name, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('create', array($params), "Google_Service_Pubsub_Topic");
+      $params = array('name' => $name, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('create', array($params), 'Google_Service_Pubsub_Topic');
   }
 
   /**
@@ -457,9 +462,10 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
    */
   public function delete($topic, $optParams = array())
   {
-    $params = array('topic' => $topic);
-    $params = array_merge($params, $optParams);
-    return $this->call('delete', array($params), "Google_Service_Pubsub_Empty");
+      $params = array('topic' => $topic);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('delete', array($params), 'Google_Service_Pubsub_Empty');
   }
 
   /**
@@ -471,9 +477,10 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
    */
   public function get($topic, $optParams = array())
   {
-    $params = array('topic' => $topic);
-    $params = array_merge($params, $optParams);
-    return $this->call('get', array($params), "Google_Service_Pubsub_Topic");
+      $params = array('topic' => $topic);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('get', array($params), 'Google_Service_Pubsub_Topic');
   }
 
   /**
@@ -488,9 +495,10 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
    */
   public function listProjectsTopics($project, $optParams = array())
   {
-    $params = array('project' => $project);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Pubsub_ListTopicsResponse");
+      $params = array('project' => $project);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Pubsub_ListTopicsResponse');
   }
 
   /**
@@ -504,9 +512,10 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
    */
   public function publish($topic, Google_Service_Pubsub_PublishRequest $postBody, $optParams = array())
   {
-    $params = array('topic' => $topic, 'postBody' => $postBody);
-    $params = array_merge($params, $optParams);
-    return $this->call('publish', array($params), "Google_Service_Pubsub_PublishResponse");
+      $params = array('topic' => $topic, 'postBody' => $postBody);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('publish', array($params), 'Google_Service_Pubsub_PublishResponse');
   }
 }
 
@@ -520,7 +529,6 @@ class Google_Service_Pubsub_ProjectsTopics_Resource extends Google_Service_Resou
  */
 class Google_Service_Pubsub_ProjectsTopicsSubscriptions_Resource extends Google_Service_Resource
 {
-
   /**
    * Lists the name of the subscriptions for this topic.
    * (subscriptions.listProjectsTopicsSubscriptions)
@@ -534,31 +542,28 @@ class Google_Service_Pubsub_ProjectsTopicsSubscriptions_Resource extends Google_
    */
   public function listProjectsTopicsSubscriptions($topic, $optParams = array())
   {
-    $params = array('topic' => $topic);
-    $params = array_merge($params, $optParams);
-    return $this->call('list', array($params), "Google_Service_Pubsub_ListTopicSubscriptionsResponse");
+      $params = array('topic' => $topic);
+      $params = array_merge($params, $optParams);
+
+      return $this->call('list', array($params), 'Google_Service_Pubsub_ListTopicSubscriptionsResponse');
   }
 }
-
-
-
 
 class Google_Service_Pubsub_AcknowledgeRequest extends Google_Collection
 {
   protected $collection_key = 'ackIds';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $ackIds;
+    public $ackIds;
 
-
-  public function setAckIds($ackIds)
-  {
-    $this->ackIds = $ackIds;
-  }
-  public function getAckIds()
-  {
-    return $this->ackIds;
-  }
+    public function setAckIds($ackIds)
+    {
+        $this->ackIds = $ackIds;
+    }
+    public function getAckIds()
+    {
+        return $this->ackIds;
+    }
 }
 
 class Google_Service_Pubsub_Empty extends Google_Model
@@ -568,200 +573,192 @@ class Google_Service_Pubsub_Empty extends Google_Model
 class Google_Service_Pubsub_ListSubscriptionsResponse extends Google_Collection
 {
   protected $collection_key = 'subscriptions';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $nextPageToken;
-  protected $subscriptionsType = 'Google_Service_Pubsub_Subscription';
-  protected $subscriptionsDataType = 'array';
+    public $nextPageToken;
+    protected $subscriptionsType = 'Google_Service_Pubsub_Subscription';
+    protected $subscriptionsDataType = 'array';
 
-
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setSubscriptions($subscriptions)
-  {
-    $this->subscriptions = $subscriptions;
-  }
-  public function getSubscriptions()
-  {
-    return $this->subscriptions;
-  }
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
+    public function setSubscriptions($subscriptions)
+    {
+        $this->subscriptions = $subscriptions;
+    }
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
+    }
 }
 
 class Google_Service_Pubsub_ListTopicSubscriptionsResponse extends Google_Collection
 {
   protected $collection_key = 'subscriptions';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $nextPageToken;
-  public $subscriptions;
+    public $nextPageToken;
+    public $subscriptions;
 
-
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setSubscriptions($subscriptions)
-  {
-    $this->subscriptions = $subscriptions;
-  }
-  public function getSubscriptions()
-  {
-    return $this->subscriptions;
-  }
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
+    public function setSubscriptions($subscriptions)
+    {
+        $this->subscriptions = $subscriptions;
+    }
+    public function getSubscriptions()
+    {
+        return $this->subscriptions;
+    }
 }
 
 class Google_Service_Pubsub_ListTopicsResponse extends Google_Collection
 {
   protected $collection_key = 'topics';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $nextPageToken;
-  protected $topicsType = 'Google_Service_Pubsub_Topic';
-  protected $topicsDataType = 'array';
+    public $nextPageToken;
+    protected $topicsType = 'Google_Service_Pubsub_Topic';
+    protected $topicsDataType = 'array';
 
-
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  public function setTopics($topics)
-  {
-    $this->topics = $topics;
-  }
-  public function getTopics()
-  {
-    return $this->topics;
-  }
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
+    public function setTopics($topics)
+    {
+        $this->topics = $topics;
+    }
+    public function getTopics()
+    {
+        return $this->topics;
+    }
 }
 
 class Google_Service_Pubsub_ModifyAckDeadlineRequest extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $ackDeadlineSeconds;
-  public $ackId;
+    public $ackDeadlineSeconds;
+    public $ackId;
 
-
-  public function setAckDeadlineSeconds($ackDeadlineSeconds)
-  {
-    $this->ackDeadlineSeconds = $ackDeadlineSeconds;
-  }
-  public function getAckDeadlineSeconds()
-  {
-    return $this->ackDeadlineSeconds;
-  }
-  public function setAckId($ackId)
-  {
-    $this->ackId = $ackId;
-  }
-  public function getAckId()
-  {
-    return $this->ackId;
-  }
+    public function setAckDeadlineSeconds($ackDeadlineSeconds)
+    {
+        $this->ackDeadlineSeconds = $ackDeadlineSeconds;
+    }
+    public function getAckDeadlineSeconds()
+    {
+        return $this->ackDeadlineSeconds;
+    }
+    public function setAckId($ackId)
+    {
+        $this->ackId = $ackId;
+    }
+    public function getAckId()
+    {
+        return $this->ackId;
+    }
 }
 
 class Google_Service_Pubsub_ModifyPushConfigRequest extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  protected $pushConfigType = 'Google_Service_Pubsub_PushConfig';
-  protected $pushConfigDataType = '';
+    protected $pushConfigType = 'Google_Service_Pubsub_PushConfig';
+    protected $pushConfigDataType = '';
 
-
-  public function setPushConfig(Google_Service_Pubsub_PushConfig $pushConfig)
-  {
-    $this->pushConfig = $pushConfig;
-  }
-  public function getPushConfig()
-  {
-    return $this->pushConfig;
-  }
+    public function setPushConfig(Google_Service_Pubsub_PushConfig $pushConfig)
+    {
+        $this->pushConfig = $pushConfig;
+    }
+    public function getPushConfig()
+    {
+        return $this->pushConfig;
+    }
 }
 
 class Google_Service_Pubsub_PublishRequest extends Google_Collection
 {
   protected $collection_key = 'messages';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $messagesType = 'Google_Service_Pubsub_PubsubMessage';
-  protected $messagesDataType = 'array';
+    protected $messagesType = 'Google_Service_Pubsub_PubsubMessage';
+    protected $messagesDataType = 'array';
 
-
-  public function setMessages($messages)
-  {
-    $this->messages = $messages;
-  }
-  public function getMessages()
-  {
-    return $this->messages;
-  }
+    public function setMessages($messages)
+    {
+        $this->messages = $messages;
+    }
+    public function getMessages()
+    {
+        return $this->messages;
+    }
 }
 
 class Google_Service_Pubsub_PublishResponse extends Google_Collection
 {
   protected $collection_key = 'messageIds';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  public $messageIds;
+    public $messageIds;
 
-
-  public function setMessageIds($messageIds)
-  {
-    $this->messageIds = $messageIds;
-  }
-  public function getMessageIds()
-  {
-    return $this->messageIds;
-  }
+    public function setMessageIds($messageIds)
+    {
+        $this->messageIds = $messageIds;
+    }
+    public function getMessageIds()
+    {
+        return $this->messageIds;
+    }
 }
 
 class Google_Service_Pubsub_PubsubMessage extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $attributes;
-  public $data;
-  public $messageId;
+    public $attributes;
+    public $data;
+    public $messageId;
 
-
-  public function setAttributes($attributes)
-  {
-    $this->attributes = $attributes;
-  }
-  public function getAttributes()
-  {
-    return $this->attributes;
-  }
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  public function getData()
-  {
-    return $this->data;
-  }
-  public function setMessageId($messageId)
-  {
-    $this->messageId = $messageId;
-  }
-  public function getMessageId()
-  {
-    return $this->messageId;
-  }
+    public function setAttributes($attributes)
+    {
+        $this->attributes = $attributes;
+    }
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+    public function getData()
+    {
+        return $this->data;
+    }
+    public function setMessageId($messageId)
+    {
+        $this->messageId = $messageId;
+    }
+    public function getMessageId()
+    {
+        return $this->messageId;
+    }
 }
 
 class Google_Service_Pubsub_PubsubMessageAttributes extends Google_Model
@@ -772,71 +769,68 @@ class Google_Service_Pubsub_PullRequest extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $maxMessages;
-  public $returnImmediately;
+    public $maxMessages;
+    public $returnImmediately;
 
-
-  public function setMaxMessages($maxMessages)
-  {
-    $this->maxMessages = $maxMessages;
-  }
-  public function getMaxMessages()
-  {
-    return $this->maxMessages;
-  }
-  public function setReturnImmediately($returnImmediately)
-  {
-    $this->returnImmediately = $returnImmediately;
-  }
-  public function getReturnImmediately()
-  {
-    return $this->returnImmediately;
-  }
+    public function setMaxMessages($maxMessages)
+    {
+        $this->maxMessages = $maxMessages;
+    }
+    public function getMaxMessages()
+    {
+        return $this->maxMessages;
+    }
+    public function setReturnImmediately($returnImmediately)
+    {
+        $this->returnImmediately = $returnImmediately;
+    }
+    public function getReturnImmediately()
+    {
+        return $this->returnImmediately;
+    }
 }
 
 class Google_Service_Pubsub_PullResponse extends Google_Collection
 {
   protected $collection_key = 'receivedMessages';
-  protected $internal_gapi_mappings = array(
+    protected $internal_gapi_mappings = array(
   );
-  protected $receivedMessagesType = 'Google_Service_Pubsub_ReceivedMessage';
-  protected $receivedMessagesDataType = 'array';
+    protected $receivedMessagesType = 'Google_Service_Pubsub_ReceivedMessage';
+    protected $receivedMessagesDataType = 'array';
 
-
-  public function setReceivedMessages($receivedMessages)
-  {
-    $this->receivedMessages = $receivedMessages;
-  }
-  public function getReceivedMessages()
-  {
-    return $this->receivedMessages;
-  }
+    public function setReceivedMessages($receivedMessages)
+    {
+        $this->receivedMessages = $receivedMessages;
+    }
+    public function getReceivedMessages()
+    {
+        return $this->receivedMessages;
+    }
 }
 
 class Google_Service_Pubsub_PushConfig extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $attributes;
-  public $pushEndpoint;
+    public $attributes;
+    public $pushEndpoint;
 
-
-  public function setAttributes($attributes)
-  {
-    $this->attributes = $attributes;
-  }
-  public function getAttributes()
-  {
-    return $this->attributes;
-  }
-  public function setPushEndpoint($pushEndpoint)
-  {
-    $this->pushEndpoint = $pushEndpoint;
-  }
-  public function getPushEndpoint()
-  {
-    return $this->pushEndpoint;
-  }
+    public function setAttributes($attributes)
+    {
+        $this->attributes = $attributes;
+    }
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+    public function setPushEndpoint($pushEndpoint)
+    {
+        $this->pushEndpoint = $pushEndpoint;
+    }
+    public function getPushEndpoint()
+    {
+        return $this->pushEndpoint;
+    }
 }
 
 class Google_Service_Pubsub_PushConfigAttributes extends Google_Model
@@ -847,87 +841,84 @@ class Google_Service_Pubsub_ReceivedMessage extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $ackId;
-  protected $messageType = 'Google_Service_Pubsub_PubsubMessage';
-  protected $messageDataType = '';
+    public $ackId;
+    protected $messageType = 'Google_Service_Pubsub_PubsubMessage';
+    protected $messageDataType = '';
 
-
-  public function setAckId($ackId)
-  {
-    $this->ackId = $ackId;
-  }
-  public function getAckId()
-  {
-    return $this->ackId;
-  }
-  public function setMessage(Google_Service_Pubsub_PubsubMessage $message)
-  {
-    $this->message = $message;
-  }
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    public function setAckId($ackId)
+    {
+        $this->ackId = $ackId;
+    }
+    public function getAckId()
+    {
+        return $this->ackId;
+    }
+    public function setMessage(Google_Service_Pubsub_PubsubMessage $message)
+    {
+        $this->message = $message;
+    }
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
 
 class Google_Service_Pubsub_Subscription extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $ackDeadlineSeconds;
-  public $name;
-  protected $pushConfigType = 'Google_Service_Pubsub_PushConfig';
-  protected $pushConfigDataType = '';
-  public $topic;
+    public $ackDeadlineSeconds;
+    public $name;
+    protected $pushConfigType = 'Google_Service_Pubsub_PushConfig';
+    protected $pushConfigDataType = '';
+    public $topic;
 
-
-  public function setAckDeadlineSeconds($ackDeadlineSeconds)
-  {
-    $this->ackDeadlineSeconds = $ackDeadlineSeconds;
-  }
-  public function getAckDeadlineSeconds()
-  {
-    return $this->ackDeadlineSeconds;
-  }
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
-  public function setPushConfig(Google_Service_Pubsub_PushConfig $pushConfig)
-  {
-    $this->pushConfig = $pushConfig;
-  }
-  public function getPushConfig()
-  {
-    return $this->pushConfig;
-  }
-  public function setTopic($topic)
-  {
-    $this->topic = $topic;
-  }
-  public function getTopic()
-  {
-    return $this->topic;
-  }
+    public function setAckDeadlineSeconds($ackDeadlineSeconds)
+    {
+        $this->ackDeadlineSeconds = $ackDeadlineSeconds;
+    }
+    public function getAckDeadlineSeconds()
+    {
+        return $this->ackDeadlineSeconds;
+    }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setPushConfig(Google_Service_Pubsub_PushConfig $pushConfig)
+    {
+        $this->pushConfig = $pushConfig;
+    }
+    public function getPushConfig()
+    {
+        return $this->pushConfig;
+    }
+    public function setTopic($topic)
+    {
+        $this->topic = $topic;
+    }
+    public function getTopic()
+    {
+        return $this->topic;
+    }
 }
 
 class Google_Service_Pubsub_Topic extends Google_Model
 {
   protected $internal_gapi_mappings = array(
   );
-  public $name;
+    public $name;
 
-
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  public function getName()
-  {
-    return $this->name;
-  }
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
 }
